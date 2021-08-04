@@ -1,4 +1,4 @@
-git pull --all https://stackoverflow.com/questions/4318161/can-git-pull-all-update-all-my-local-branches
+git pull --all https://github.com/FlamboD/Express-web-Framework-Tutorial/blob/main/github.bat
 git add ./
 git commit -m "update"
 git push
