@@ -65,7 +65,7 @@ function bookCreate(title, summary, isbn, author, genre, cb) {
         title: title,
         summary: summary,
         author: author,
-        ISBN: isbn
+        isbn: isbn
     }
     if (genre !== false) bookdetail.genre = genre
 
