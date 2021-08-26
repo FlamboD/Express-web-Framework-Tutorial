@@ -62,4 +62,14 @@ authorSchema.virtual('date_of_death_formatted').get(function() {
     return DateTime.fromJSDate(this.date_of_death).toFormat(`MMM d'${o}', yyyy`);
 });
 
+authorSchema.virtual('date_of_birth_value').get(function() {
+    if(this.date_of_birth === undefined) return undefined;
+    return DateTime.fromJSDate(this.date_of_birth).toFormat('yyyy-MM-dd');
+});
+
+authorSchema.virtual('date_of_death_value').get(function() {
+    if(this.date_of_death === undefined) return undefined;
+    return DateTime.fromJSDate(this.date_of_death).toFormat('yyyy-MM-dd');
+});
+
 module.exports = mongoose.model("Author", authorSchema);
