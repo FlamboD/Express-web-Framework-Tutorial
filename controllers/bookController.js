@@ -221,11 +221,12 @@ exports.book_update_get = (req, res, next) => {
 exports.book_update_post = [
     (req, res, next) => {
         if(!(req.body.genre instanceof Array)) {
-            if(typeof req.body.genre === 'undefined')
+            if(!!req.body.genre)
                 req.body.genre = [];
             else
                 req.body.genre = new Array(req.body.genre);
         }
+        next();
     },
     body('title', 'Title must not be empty.')
         .trim().isLength({ min: 1 }).escape(),

@@ -25,7 +25,7 @@ block content
             label(for='status') Status:
             select#status.form-control(type='select' placeholder='Select status' name='status' required='true')
                 for status in ['Maintenance', 'Available', 'Loaned', 'Reserved']
-                    option(value=status selected=(bookinstance.status===status ? 'selected' : false)) #{status}
+                    option(value=status selected=(bookinstance ? bookinstance.status===status ? 'selected' : false : false)) #{status}
 
         button.btn.btn-primary(type='submit') Submit
 
